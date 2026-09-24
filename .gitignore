@@ -1,0 +1,49 @@
+# ==========================================
+# 1. JAVA (Abaikan file .class dan folder /bin atau /target)
+# ==========================================
+*.class
+*.jar
+*.war
+*.ear
+bin/
+target/
+.settings/
+.classpath
+.project
+
+# ==========================================
+# 2. C++ (Abaikan file hasil kompilasi executable & object file)
+# ==========================================
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.dSYM/
+
+# ==========================================
+# 3. PHP (Abaikan folder vendor composer & log)
+# ==========================================
+/vendor/
+composer.phar
+*.log
+
+# ==========================================
+# 4. PYTHON (Abaikan cache bytecode & virtual environment)
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# 5. OS & EDITOR (Abaikan file bawaan laptop & VS Code)
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.env
