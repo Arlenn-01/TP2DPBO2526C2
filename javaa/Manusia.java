@@ -24,9 +24,17 @@ public class Manusia {
 
     // setter
     public void setNama(String nama) {
+        if (nama == "") {
+            System.out.println("Nama tidak boleh kosong");
+            return; //exit
+        } 
         this.nama = nama;
     }
     public void setUmur(int umur) {
+        if (umur <= 0) {
+            System.out.println("Umur tidak valid");
+            return; //exit
+        }
         this.umur = umur;
     }
     public void setGender(String gender) {
