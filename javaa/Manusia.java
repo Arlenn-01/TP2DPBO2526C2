@@ -6,9 +6,10 @@ public class Manusia {
     private String gender;
 
     public Manusia(String nama, int umur, String gender) {
-        this.nama = nama;
-        this.umur = umur;
-        this.gender = gender;
+        //pakai setter biar langsung satset SRP
+        setNama(nama);
+        setUmur(umur);
+        setGender(gender);
     }
 
     // getter
