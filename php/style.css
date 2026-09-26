@@ -1,0 +1,242 @@
+/* Tampilan halaman web dibuat terpisah agar index.php fokus pada logika PHP */
+:root {
+    --ink: #1c2733;
+    --muted: #637181;
+    --paper: #f6f8f5;
+    --surface: #ffffff;
+    --line: #d8e0da;
+    --accent: #177e73;
+    --accent-dark: #0e5e57;
+    --warm: #f0b35a;
+    --success: #e4f4ec;
+    --danger: #fde8e6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.container {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+    padding: 3rem 0 4rem;
+}
+
+.page-header {
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.eyebrow {
+    margin: 0 0 .45rem;
+    color: var(--accent);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: .75rem;
+    font-weight: bold;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+h1 {
+    margin-bottom: .6rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: .98;
+    max-width: 720px;
+}
+
+h2 {
+    margin-bottom: 0;
+    font-size: 1.55rem;
+}
+
+.page-header > p:last-child {
+    color: var(--muted);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.table-section,
+.form-section {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+}
+
+.section-heading {
+    align-items: end;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.count {
+    background: #e9f1ec;
+    border-radius: 999px;
+    color: var(--accent-dark);
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .45rem .7rem;
+    white-space: nowrap;
+}
+
+.alert {
+    border-radius: 6px;
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-bottom: 1rem;
+    padding: .8rem 1rem;
+}
+
+.alert.success {
+    background: var(--success);
+    color: #17623e;
+}
+
+.alert.error {
+    background: var(--danger);
+    color: #8a302b;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 920px;
+    width: 100%;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--line);
+    padding: .8rem .7rem;
+    text-align: left;
+    white-space: nowrap;
+}
+
+th {
+    background: var(--ink);
+    color: white;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: .76rem;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background: #f7faf7;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+}
+
+label {
+    color: var(--muted);
+    display: grid;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: .8rem;
+    font-weight: bold;
+    gap: .4rem;
+}
+
+input,
+button {
+    border-radius: 5px;
+    font: inherit;
+    min-height: 2.7rem;
+    padding: .65rem .75rem;
+}
+
+input {
+    background: #fbfcfa;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: 3px solid #bde2dc;
+}
+
+.form-actions {
+    align-items: end;
+    display: flex;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.primary {
+    background: var(--accent);
+    color: white;
+    width: 100%;
+}
+
+.primary:hover {
+    background: var(--accent-dark);
+}
+
+.reset-form {
+    display: block;
+    margin-top: 1rem;
+}
+
+.secondary {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--muted);
+}
+
+.secondary:hover {
+    border-color: var(--warm);
+    color: var(--ink);
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding-top: 2rem;
+    }
+
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: min(100% - 1rem, 1180px);
+    }
+
+    .section-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
