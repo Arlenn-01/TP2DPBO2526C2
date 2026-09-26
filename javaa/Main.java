@@ -16,7 +16,39 @@ public class Main {
         daftarDokterSp.add(new DokterSpesialis("Ancika", 25, "Wanita", 35000000, "Pindad", "Saraf", 400000, "Sp.Jp"));
 
         CetakTabelDinamis(daftarDokterSp);
+
+        System.out.println("Mau nambah data? (yes/no)");
+        Scanner input = new Scanner(System.in);
+        String yes_or_no = input.nextLine();
+        //di java tanda (==) itu membandingkan alamat memory dan antara variable dan input keyboard bisa berbeda memory
+        //maka solusinya pake .equals
+        if (yes_or_no.equals("yes") || yes_or_no.equals("Yes") || yes_or_no.equals("YES")) {
+            System.out.println("Berapa banyak data?");
+            int banyak_data = Integer.parseInt(input.nextLine());
+            System.out.println("Silahkan masukkan data sesuai format");
+
+            for (int i=0; i<banyak_data; ++i) {
+                String nama = input.nextLine();
+                int umur = Integer.parseInt(input.nextLine()); //mengubah string menjadi int. Mencegah kelemahan pada nextInt biasa
+                String gender = input.nextLine();
+                long gaji = Long.parseLong(input.nextLine());
+                String rumah_sakit = input.nextLine();
+                String spesialisasi = input.nextLine();
+                long spesialisasi_tarif = Long.parseLong(input.nextLine());
+                String gelar_spesialisasi = input.nextLine();
+                
+                //masukkan ke arrayList
+                DokterSpesialis dokter_baru = new DokterSpesialis(
+                    nama, umur, gender, gaji, rumah_sakit, spesialisasi, spesialisasi_tarif, gelar_spesialisasi
+                );
+                daftarDokterSp.add(dokter_baru);
+            }
+        }
+        CetakTabelDinamis(daftarDokterSp);
+        input.close();
     }
+
+    //helper method
     public static void CetakTabelDinamis(ArrayList<DokterSpesialis> daftarDokterSp) {
         //Header kolom
         String[] headers = {"Surat Tanda Registarsi", "Nama", "Umur", "Gender", "Gaji Pokok", "Spesialisasi", "Spesialisasi Tarif", "Gelar Spesialis", "Rumah Sakit"};
