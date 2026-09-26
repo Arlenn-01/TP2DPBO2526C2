@@ -24,13 +24,13 @@ class Manusia :
 
     #getter
     def getNama(self) :
-        return self.nama
+        return self.__nama
 
     def getUmur(self) :
-        return self.umur
+        return self.__umur
 
     def getGender(self) :
-        return self.gender
+        return self.__gender
 
     def informasi(self) :
         print(self.getNama())
