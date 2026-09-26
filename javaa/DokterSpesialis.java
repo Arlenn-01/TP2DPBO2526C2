@@ -2,7 +2,7 @@ package javaa;
 
 public class DokterSpesialis extends Dokter {
     private String spesialisasi; //misal jantung, anak, paru, dll
-    private long spesialisasi_tarif; //tarif khusus penanganan di bidang spesialisasinya
+    private long spesialisasi_tarif; //tarif untuk konsultasi di bidang spesialisasinya
     private String gelar_spesialis; // "Sp.JP" dan lain lain
 
     public DokterSpesialis( //parameter kebawah biar ga kepanjangan
