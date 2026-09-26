@@ -66,7 +66,7 @@ public class Main {
             //tipe data prmitif harus dihtung manual
             int panjang_umur = String.valueOf(data.getUmur()).length();
             int panjang_gaji = String.valueOf(data.getGajiPokok()).length();
-            int panjang_tarif = String.valueOf(data.getGajiPokok()).length();
+            int panjang_tarif = String.valueOf(data.getSpesialisasiTarif()).length();
 
             //cari string terpanjang
             //menggunakan max_length yang berada di scope luar sehingga nilai terpanjang dari tiap data tersimpan aman
